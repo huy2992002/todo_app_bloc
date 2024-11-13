@@ -18,8 +18,8 @@ class AppElevatedButton extends StatelessWidget {
     Color? splashColor,
     Color? highlightColor,
   })  : borderRadius = borderRadius ?? BorderRadius.circular(10.0),
-        splashColor = splashColor ?? AppColors.hDFBD43.withOpacity(0.6),
-        highlightColor = highlightColor ?? AppColors.hDFBD43.withOpacity(0.8);
+        splashColor = splashColor ?? AppColors.hFFEC4B.withOpacity(0.6),
+        highlightColor = highlightColor ?? AppColors.hFFEC4B.withOpacity(0.8);
 
   final VoidCallback? onPressed;
   final double height;
@@ -49,7 +49,7 @@ class AppElevatedButton extends StatelessWidget {
           padding: padding,
           height: height,
           decoration: BoxDecoration(
-            color: color ?? AppColors.hDFBD43,
+            color: color ?? AppColors.hFFEC4B,
             borderRadius: borderRadius,
           ),
           child: Row(
