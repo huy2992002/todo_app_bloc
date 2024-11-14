@@ -62,12 +62,20 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/img_logo_app.jpg
+  AssetGenImage get imgLogoApp =>
+      const AssetGenImage('assets/images/img_logo_app.jpg');
+
+  /// File path: assets/images/img_splash.png
+  AssetGenImage get imgSplash =>
+      const AssetGenImage('assets/images/img_splash.png');
+
   /// File path: assets/images/img_welcome.png
   AssetGenImage get imgWelcome =>
       const AssetGenImage('assets/images/img_welcome.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [imgWelcome];
+  List<AssetGenImage> get values => [imgLogoApp, imgSplash, imgWelcome];
 }
 
 class Assets {
