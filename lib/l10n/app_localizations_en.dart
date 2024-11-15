@@ -8,4 +8,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appName => 'Todo App';
+
+  @override
+  String get hereYouCanManageYourDailyTasks => 'Here You can manage your daily tasks';
+
+  @override
+  String get descriptionWelcome => 'Welcome to Todo App – your ultimate productivity companion! Simplify your tasks, stay organized, and achieve more every day. Effortlessly create, manage, and prioritize your to-dos with just a tap';
+
+  @override
+  String get letGo => 'Let go';
 }
