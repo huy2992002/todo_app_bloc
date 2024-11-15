@@ -1,4 +1,7 @@
 {
   "@@locale": "en",
-  "appName": "Todo App"
+  "appName": "Todo App",
+  "hereYouCanManageYourDailyTasks": "Here You can manage your daily tasks",
+  "descriptionWelcome": "Welcome to Todo App – your ultimate productivity companion! Simplify your tasks, stay organized, and achieve more every day. Effortlessly create, manage, and prioritize your to-dos with just a tap",
+  "letGo": "Let go"
 }

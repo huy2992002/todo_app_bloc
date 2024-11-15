@@ -100,6 +100,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Todo App'**
   String get appName;
+
+  /// No description provided for @hereYouCanManageYourDailyTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Here You can manage your daily tasks'**
+  String get hereYouCanManageYourDailyTasks;
+
+  /// No description provided for @descriptionWelcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Todo App – your ultimate productivity companion! Simplify your tasks, stay organized, and achieve more every day. Effortlessly create, manage, and prioritize your to-dos with just a tap'**
+  String get descriptionWelcome;
+
+  /// No description provided for @letGo.
+  ///
+  /// In en, this message translates to:
+  /// **'Let go'**
+  String get letGo;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
