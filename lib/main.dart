@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-        scaffoldBackgroundColor:AppColors.hFFFDF4 ,
-        fontFamily: GoogleFonts.rubik().fontFamily
+        scaffoldBackgroundColor: AppColors.hFFFDF4,
+        fontFamily: GoogleFonts.rubik().fontFamily,
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
