@@ -3,8 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_app_bloc/l10n/app_localizations.dart';
 import 'package:todo_app_bloc/resources/app_colors.dart';
 import 'package:todo_app_bloc/screens/splash/splash_screen.dart';
+import 'package:todo_app_bloc/setup_locator.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupLocator();
   runApp(const MyApp());
 }
 
