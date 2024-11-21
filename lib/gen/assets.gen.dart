@@ -34,14 +34,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_home.svg
   String get icHome => 'assets/icons/ic_home.svg';
 
-  /// File path: assets/icons/ic_more.svg
-  String get icMore => 'assets/icons/ic_more.svg';
-
   /// File path: assets/icons/ic_notification.svg
   String get icNotification => 'assets/icons/ic_notification.svg';
 
   /// File path: assets/icons/ic_search.svg
   String get icSearch => 'assets/icons/ic_search.svg';
+
+  /// File path: assets/icons/ic_setting.svg
+  String get icSetting => 'assets/icons/ic_setting.svg';
 
   /// File path: assets/icons/ic_tick.svg
   String get icTick => 'assets/icons/ic_tick.svg';
@@ -52,9 +52,9 @@ class $AssetsIconsGen {
         icFlagEnglish,
         icFlagVietnam,
         icHome,
-        icMore,
         icNotification,
         icSearch,
+        icSetting,
         icTick
       ];
 }

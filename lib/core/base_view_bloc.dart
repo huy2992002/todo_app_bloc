@@ -9,42 +9,44 @@ class BaseViewBloc<B extends BaseBloc<BaseEvent, BaseState>>
     extends StatelessWidget {
   final B bloc;
   final PreferredSizeWidget? appBar;
-  final Widget body;
+  final Widget? body;
   final Widget? bottomNavigatorBar;
 
   const BaseViewBloc({
     super.key,
     required this.bloc,
     this.appBar,
-    required this.body,
+    this.body,
     this.bottomNavigatorBar,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.hFFFDF4,
-      appBar: appBar,
-      body: BlocProvider<B>.value(
-        value: bloc,
-        child: SafeArea(
-          child: BlocSelector<B, BaseState, bool>(
-            selector: (state) => state.isInitialLoading,
-            builder: (context, isInitialLoading) {
-              if (isInitialLoading) {
-                return const Expanded(
-                  child: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                );
-              } else {
-                return body;
-              }
-            },
-          ),
-        ),
+    return BlocProvider<B>.value(
+      value: bloc,
+      child: Scaffold(
+        backgroundColor: AppColors.hFFFDF4,
+        appBar: appBar,
+        body: body != null
+            ? SafeArea(
+                child: BlocSelector<B, BaseState, bool>(
+                  selector: (state) => state.isInitialLoading,
+                  builder: (context, isInitialLoading) {
+                    if (isInitialLoading) {
+                      return const Expanded(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      );
+                    } else {
+                      return body!;
+                    }
+                  },
+                ),
+              )
+            : Container(),
+        bottomNavigationBar: bottomNavigatorBar,
       ),
-      bottomNavigationBar: bottomNavigatorBar,
     );
   }
 }

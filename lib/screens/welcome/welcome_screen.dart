@@ -3,7 +3,7 @@ import 'package:todo_app_bloc/components/app_elevated_button.dart';
 import 'package:todo_app_bloc/components/app_text.dart';
 import 'package:todo_app_bloc/gen/assets.gen.dart';
 import 'package:todo_app_bloc/l10n/app_localizations.dart';
-import 'package:todo_app_bloc/screens/home/home_screen.dart';
+import 'package:todo_app_bloc/screens/main/main_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -31,13 +31,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 height: width * 0.6,
               ),
               const SizedBox(height: 20.0),
-               AppText(
-                title: AppLocalizations.of(context).hereYouCanManageYourDailyTasks,
+              AppText(
+                title:
+                    AppLocalizations.of(context).hereYouCanManageYourDailyTasks,
                 fontWeight: FontWeight.w800,
               ),
               const SizedBox(height: 10.0),
-               AppText(
-                title:AppLocalizations.of(context).descriptionWelcome,
+              AppText(
+                title: AppLocalizations.of(context).descriptionWelcome,
                 fontWeight: FontWeight.w400,
                 textAlign: TextAlign.center,
                 titleSize: 12.0,
@@ -47,7 +48,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    MaterialPageRoute(builder: (context) => const MainScreen()),
                     (route) => false,
                   );
                 },
