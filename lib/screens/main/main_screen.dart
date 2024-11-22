@@ -5,10 +5,14 @@ import 'package:todo_app_bloc/core/base_view_bloc.dart';
 import 'package:todo_app_bloc/gen/assets.gen.dart';
 import 'package:todo_app_bloc/resources/app_colors.dart';
 import 'package:todo_app_bloc/resources/app_shadow.dart';
+import 'package:todo_app_bloc/screens/calendar/calendar_screen.dart';
 import 'package:todo_app_bloc/screens/features_locator.dart';
+import 'package:todo_app_bloc/screens/home/home_screen.dart';
 import 'package:todo_app_bloc/screens/main/bloc/main_bloc.dart';
 import 'package:todo_app_bloc/screens/main/bloc/main_event.dart';
 import 'package:todo_app_bloc/screens/main/bloc/main_state.dart';
+import 'package:todo_app_bloc/screens/notification/notification_screen.dart';
+import 'package:todo_app_bloc/screens/setting/setting_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -27,6 +31,13 @@ class _MainScreenState extends State<MainScreen> {
     Assets.icons.icSetting,
   ];
 
+  final screens = [
+    const HomeScreen(),
+    const CalendarScreen(),
+    const NotificationScreen(),
+    const SettingScreen(),
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -37,7 +48,13 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return BaseViewBloc(
       bloc: bloc,
-      body: Container(),
+      body: BlocSelector<MainBloc, MainState, int>(
+        selector: (state) => state.index,
+        builder: (context, indexSelected) => IndexedStack(
+          index: indexSelected,
+          children: screens,
+        ),
+      ),
       bottomNavigatorBar: Container(
         decoration: BoxDecoration(
           color: AppColors.hEDEAEA,
@@ -79,9 +96,8 @@ class _MainScreenState extends State<MainScreen> {
               margin: const EdgeInsets.symmetric(horizontal: 14.0),
               duration: const Duration(milliseconds: 1000),
               decoration: BoxDecoration(
-              color:  isSelected ? AppColors.hDFBD43 : Colors.transparent,
-              borderRadius: BorderRadius.circular(5.0)
-              ),
+                  color: isSelected ? AppColors.hDFBD43 : Colors.transparent,
+                  borderRadius: BorderRadius.circular(5.0)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
